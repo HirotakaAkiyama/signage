@@ -1,0 +1,88 @@
+<!DOCTYPE html> {% load staticfiles %}
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/sig.css' %}">
+  <title>Moemoe</title>
+</head>
+
+<body>
+
+  <div class="movie">
+    {% load static %}
+    <video src="{% static "movie/Fi.mp4" %}"autoplay loop controls></video>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+  <script>
+    $(function() {
+      setInterval(function() {
+        $('#infs').load('http://127.0.0.1:8000 #infs');
+      }, 1000 * 30);
+    });
+  </script>
+
+  <div class="informations" id="infs">
+    <div class="time_info">
+      <h1>バス情報</h1><br> {%　for bustime in busTimes|slice:":3" %}
+      <ul style="list-style:none;">
+        <h2 li>{{bustime}}</li><br><br>
+      </ul>
+      {% endfor %}
+    </div>
+
+    <div class="place_info">
+      {%　for busdest in busDests|slice:":3" %}
+      <ul style="list-style:none;">
+        <h2 li class="item2">{{busdest}}</li><br><br>
+      </ul>
+      {% endfor %} 
+    </div>
+
+    <div class="near_info" id="near">
+      {%　for businfo in busInfos|slice:":3" %}
+      <ul style="list-style:none;">
+        <h3 li>{{businfo}}</li><br><br><br>
+      </ul>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="twitter">
+    <a class="twitter-timeline" width="630" height="580" href="https://twitter.com/hashtag/%E3%82%82%E3%81%88%E3%82%82%E3%81%882017" data-widget-id="883231021684080640">#もえもえ2017 のツイート</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </div>
+
+  <div class="weather">
+    <iframe id="forecast_embed" type="text/html" frameborder="0" height="245"width="900px" src="http://forecast.io/embed/#lat=41.768793&lon=140.728810&name=Hakodate&units=si"></iframe>
+  </div>
+
+
+  <div class="clock">
+  <h1 id="RealtimeClockArea2">※ここに時計(2桁固定版)が表示されます。</h1>
+  <script type="text/javascript">
+  function set2fig(num) {
+     // 桁数が1桁だったら先頭に0を加えて2桁に調整する
+     var ret;
+     if( num < 10 ) { ret = "0" + num; }
+     else { ret = num; }
+     return ret;
+  }
+  function showClock2() {
+     var nowTime = new Date();
+     var nowHour = set2fig( nowTime.getHours() );
+     var nowMin  = set2fig( nowTime.getMinutes() );
+     var nowSec  = set2fig( nowTime.getSeconds() );
+     var msg = nowHour + ":" + nowMin +" 現在";
+     document.getElementById("RealtimeClockArea2").innerHTML = msg;
+  }
+  setInterval('showClock2()',1000);
+  </script>
+  </div>
+
+</body>
+</html>

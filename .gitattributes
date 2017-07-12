@@ -1,0 +1,4 @@
+{LARGE_FILE} filter=lfs diff=lfs merge=lfs -text
+{Fi.mp4} filter=lfs diff=lfs merge=lfs -text
+Fi.mp4 filter=lfs diff=lfs merge=lfs -text
+FI.mp4 filter=lfs diff=lfs merge=lfs -text

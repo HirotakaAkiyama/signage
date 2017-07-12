@@ -1,0 +1,66 @@
+.movie video {
+  position: absolute;
+  left: 50px;
+  top: 0px;
+  width: 900px;
+  height: 800px;
+}
+
+.informations li {
+  font-size: large;
+}
+
+.time_info h1 {
+  margin-left: 40px;
+}
+
+.place_info h1 {
+  margin-left: 25px;
+}
+
+.time_info {
+  position: absolute;
+  left: 980px;
+  top: 50px;
+}
+
+.time_info h2 {
+  border-bottom: 1px solid #ccc;
+  width: 630px;
+  padding-right: 50px;
+}
+
+.place_info li {
+  padding-bottom: 1px;
+}
+
+.place_info {
+  position: absolute;
+  left: 1130px;
+  top: 140px
+}
+
+
+.near_info {
+  position: absolute;
+  left: 1380px;
+  top: 140px;
+}
+
+.twitter {
+  position: absolute;
+  left: 1020px;
+  top: 450px;
+}
+
+.weather {
+  position: absolute;
+  left: 50px;
+  top: 800px;
+}
+
+.clock {
+  position: absolute;
+  left: 1450px;
+  top: 50px;
+}
